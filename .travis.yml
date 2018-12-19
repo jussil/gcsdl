@@ -12,6 +12,9 @@ before_install:
   - chmod +x $GOPATH/bin/dep
   - go get github.com/mitchellh/gox
 
+install:
+  - # skip
+
 script:
   - dep ensure
   - go vet $(go list ./... | grep -v /vendor/)
