@@ -76,8 +76,8 @@ func parseSource(rawurl string) (bucket string, object string, err error) {
 	if url.Scheme != "gs" {
 		return "", "", fmt.Errorf("Url scheme is invalid, expected 'gs' got '%s'", url.Scheme)
 	}
-	if len(url.Path) == 0 {
+	if len(url.Path) <= 1 {
 		return "", "", errors.New("Url does not contain object")
 	}
-	return url.Host, url.Path, nil
+	return url.Host, url.Path[1:], nil
 }
