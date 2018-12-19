@@ -18,7 +18,7 @@ install:
 script:
   - dep ensure
   - go vet $(go list ./... | grep -v /vendor/)
-  - gox -os="linux darwin windows" -arch="amd64" -output="gcsdl.." -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose ./...
+  - gox -os="linux darwin windows" -arch="amd64" -ldflags "-X main.Rev=`git rev-parse --short HEAD`" -verbose ./...
 
 deploy:
   provider: releases
@@ -26,9 +26,9 @@ deploy:
   api_key:
     secure: uTxf6FTOzUmIP2hGaPb8HqlOE96UqFZ1HJCDc1X+HClm6AHuqpDGcnKvrtbOqw3Cm0RxtC4nkswY9tuY7rv2yYMQ+4dfB+7vazn18SOyhWpUltWtyAkVJMNpugGLh84IhaIDFrtmnT1V6XHPxLQ2c+vRJJoL9GTVOLDg2pFMd7GYu9Xt2YUDUZ1MjZpLrikpsyRUWVOBihTZ8YGxytnhIECk2HMZycC9p3kl5tANxfKBmglMGPeMQ5QQbmmnLC8dhqeOmzA5BrwUcmx5WuaFoIXq4PVhzoMTuQOzqrAOUeOHhFrhiHYHvSFpsyxnrvZVrvUK8SqRqe0y4ileyY4untjRiJk38h6PLU2I97OySwrYGCew9j4ps97VRnz/IFk0QguQqKu0iC5W3D5rCOYN9anxil8BKRMlluDR7Is/rR/M1bmF5GG9H6fqmunrK7my5yNARc+lv638AC/CSEQXuNK+hGCu5mDPRIFJVeRsNuBqBRLgfs7sRhpkSCCL7tcOo99x68vQlbu4xOwytKhpTZOXQWH8cUSJy1q+N0LefqAYaxEOgf3r1Dfj9rNJE7aSWs5U2CjBdaA+bQsOYUfL+LYkjt3+PVWSXr4lupXGrWoiE/oytQydQhUQEgtEI68j4HtogThSuzHOJULftSPO7cFPLEDcbE6AxcT7/97O+fg=
   file:
-    - gcsdl.windows.amd64.exe
-    - gcsdl.darwin.amd64
-    - gcsdl.linux.amd64
+    - gcsdl_windows_amd64.exe
+    - gcsdl_darwin_amd64
+    - gcsdl_linux_amd64
   on:
     repo: jussil/gcsdl
     tags: true
