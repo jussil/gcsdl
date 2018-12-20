@@ -2,7 +2,13 @@
 
 Simple way to download objects from Google Cloud Storage with environments default credentials.
 
-Main purpose is to have smaller and standalone binary for downloading objects instead of installing full blown Google Cloud SDK.
+Motivation behind the software is to have small and standalone binary instead of installing full Google Cloud SDK in order to download objects from storage.
+
+## Configuration
+
+[Cloud Storage Authentication](https://cloud.google.com/storage/docs/authentication#libauth)
+
+If you run this tool outside of Google Cloud where the credentials are already set in the environment, you just have to point environment variable `GOOGLE_APPLICATION_CREDENTIALS` to service accounts key.
 
 ## Usage
 
